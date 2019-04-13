@@ -1,5 +1,7 @@
 # Checkiday sopel plugin
 
+![pypi status](https://img.shields.io/pypi/v/sopel-modules.checkiday.svg)
+
 A plugin that returns today's holidays from checkiday.com
 
 ![Screenshot](screenshot.png)
