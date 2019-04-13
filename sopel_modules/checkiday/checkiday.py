@@ -72,5 +72,5 @@ def days(bot, trigger):
     colours = random.sample(['01', '02', '03', '04', '06', '08', '11'], 7)
     cdays = apply_colours(days, colours)
 
-    for msg in split_msg(cdays + cdays + cdays):
+    for msg in split_msg(cdays):
         bot.say(msg)
