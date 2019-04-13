@@ -4,7 +4,7 @@ python:
   - 3.6
 
 before_install:
-  - sudo apt-get install -y enchant
+  - sudo apt-get install -y enchant libenchant1c2a
 addons:
   apt:
     update: true

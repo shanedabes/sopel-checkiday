@@ -12,16 +12,18 @@ if __name__ == '__main__':
               os.path.dirname(os.path.abspath(__file__))),
           file=sys.stderr)
 
-with open('README.md') as readme_file:
+script_dir = os.path.dirname(os.path.realpath(__file__))
+
+with open('{}/README.md'.format(script_dir)) as readme_file:
     readme = readme_file.read()
 
-with open('NEWS') as history_file:
+with open('{}/NEWS'.format(script_dir)) as history_file:
     history = history_file.read()
 
-with open('requirements.txt') as requirements_file:
+with open('{}/requirements.txt'.format(script_dir)) as requirements_file:
     requirements = [req for req in requirements_file.readlines()]
 
-with open('requirements_dev.txt') as dev_requirements_file:
+with open('{}/requirements_dev.txt'.format(script_dir)) as dev_requirements_file:
     dev_requirements = [req for req in dev_requirements_file.readlines()]
 
 
