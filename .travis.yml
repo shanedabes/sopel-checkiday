@@ -1,23 +1,20 @@
 language: python
 python:
-  - 3.5
-  - 3.6
-
+- 3.5
+- 3.6
 before_install:
-  - sudo apt-get install -y enchant libenchant1c2a
+- sudo apt-get install -y enchant libenchant1c2a
 addons:
   apt:
     update: true
 install: pip install -U tox-travis
-
 script: tox
-
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
   user: sharktamer
   password:
-    secure: fh0O42FcuQ+TQxyGVcN2X43RjZ5FjQbkmP8Xl/ciuXa/LxWb3sBry+/o5VVFgevhsMIfmiN7uy9EpU3ZQNFNoXgyVwKAl12OIHPDmJ+aUchA/vT65XzjGcu+jh9m9igMRVaoYWlC+aHm1X6a9SAizYgRXV2sETuzuCYVAvNe6cKUbRVYmMU1NTxWd2N+ZTFUritKmLLu2+fpr0Oivew5NHSw3BielK+bX5hQpOJvMyqcbzxDayd3EFBsnKGTYH38srTBVI0W74EhCzNAhFFUuyajoGy85pcUfL+eYzzh4OCIABJRlJWXwQHEZ4Fw2i8ZNHrTj4A8LuhItMVIeaOxjUFfgkYFAGg1s34lFAxNT8UsufK63YzgF8q7IZpDZd1JLmrg7sML1L6u1zKEh6UU6+RlvkyRBR30BO4QglRKd/S+S/ky3sJjn5f+i+/jujkQgwC9fRV/yLIATI83CEt9Np4e7/EZpUTLgkY4z0ReS4SOiwSfzwmlg1KJtlhVzx+Z2Fjvx0cgh8g1fZgSfW4tkTxo+fbdNBiPaOJkLPL89E4rVjYJoDIoJeF88hFlY44dLu4LcsjvY+cBRmFY47m64QLYE8LxepKIDol+QUe6Po1UTy7YmVfuvntf94e8shcIWCaxh73KrbbNozYX/vYRgKhEx0WQIuQdl4D99q9jZXY=
+    secure: Y+MB/W75pl1wjCau8sSVOHeBAqarvBDtlVuvt2YriOPsETTir8st5OTPOc1cIfIaSyxJr6NjVVPS8Ff5ffAxN597AoIwDI2JVzex8R5hv0mV7XQxStDpQZ2+RzzJzD+MIWLVtc/cD2txvlGFKcMYpdlR6vFAekANEDnkWxHabZkwP8bq4FUUGxw0loz3OLfGG/Sq9R2tCVo/SDoopVorOnY0Af+3f6UFeq8Hyiw3rzaeq0F1gA/j16pHS5l56PmnNNqW4vu97o5G5Wgt5G2CfkgjcKInSLphCC6/KNjsDaOD1GwpnmMJhOldQRzWtKY5tuuw/eoMMBV3mixpNBL/UgkRdbVNBx+BhE98Spcxs/prchG950Ms/X4rgivLIDxqbEhx+lcvAklRUsYkcHq6y7J9ehlh6JdZ146ax/aFePRvxyOs1siCzQkRAOdxlaoDFAm2jcGa+kxSLnmLGiH+mv2xHSfckKdq1eE1CEaiEl4+br73k4NHMHW8DmEu+btL5mdcgMW2TFWNYz0KNe7zi6utZSN7BjpDH81efsdqg0MsvykvWXGe8OabdlKxV+iU+9osALoQ4YJyVvRuo6SkHMlV03SUTEMVbrQWh5/T3fyNUbmZPmqDwHQ8qZjwlaYRDrVgLf4Ne5ymRYm08X8PszHcFStHCeb2hQ7Y2HvRzj8=
   on:
     tags: true
     repo: shanedabes-sopel/sopel-checkiday
