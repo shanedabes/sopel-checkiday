@@ -1,6 +1,7 @@
 # Checkiday sopel plugin
 
-![pypi status](https://img.shields.io/pypi/v/sopel-modules.checkiday.svg)
+![pypi status(https://pypi.org/project/sopel-modules.checkiday/)](https://img.shields.io/pypi/v/sopel-modules.checkiday.svg)
+[![Build Status](https://travis-ci.org/shanedabes-sopel/sopel-checkiday.svg?branch=master)](https://travis-ci.org/shanedabes-sopel/sopel-checkiday)
 
 A plugin that returns today's holidays from checkiday.com
 
