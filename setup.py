@@ -23,8 +23,8 @@ with open('{}/NEWS'.format(script_dir)) as history_file:
 with open('{}/requirements.txt'.format(script_dir)) as requirements_file:
     requirements = [req for req in requirements_file.readlines()]
 
-with open('{}/requirements_dev.txt'.format(script_dir)) as dev_requirements_file:
-    dev_requirements = [req for req in dev_requirements_file.readlines()]
+#  with open('{}/requirements_dev.txt'.format(script_dir)) as dev_requirements_file:
+#      dev_requirements = [req for req in dev_requirements_file.readlines()]
 
 
 setup(
@@ -39,7 +39,7 @@ setup(
     namespace_packages=['sopel_modules'],
     include_package_data=True,
     install_requires=requirements,
-    tests_require=dev_requirements,
+    #  tests_require=dev_requirements,
     test_suite='tests',
     license='Eiffel Forum License, version 2',
 )
