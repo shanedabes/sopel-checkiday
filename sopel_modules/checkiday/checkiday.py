@@ -73,4 +73,4 @@ def days(bot, trigger):
     cdays = apply_colours(days, colours)
 
     for msg in split_msg(cdays):
-        bot.say(f'Today is {msg}')
+        bot.say('Today is {}'.format(msg))
