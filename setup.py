@@ -23,13 +23,9 @@ with open('{}/NEWS'.format(script_dir)) as history_file:
 with open('{}/requirements.txt'.format(script_dir)) as requirements_file:
     requirements = [req for req in requirements_file.readlines()]
 
-#  with open('{}/requirements_dev.txt'.format(script_dir)) as dev_requirements_file:
-#      dev_requirements = [req for req in dev_requirements_file.readlines()]
-
-
 setup(
     name='sopel_modules.checkiday',
-    version='0.1.0',
+    version='0.2.0',
     description='A plugin that returns today\'s holidays from checkiday.com',
     long_description=readme + '\n\n' + history,
     author='Shane Donohoe',
