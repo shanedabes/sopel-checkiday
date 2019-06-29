@@ -4,6 +4,7 @@ from __future__ import (unicode_literals, absolute_import,
                         division, print_function)
 import itertools
 import random
+import textwrap
 
 import sopel.module
 import sopel.formatting
@@ -35,17 +36,6 @@ def get_days_from_json(j):
     return [i['name'] for i in j['holidays']]
 
 
-def num_ranges(n, r):
-    """ Return the split points of a number n at point r """
-    o = 0
-    yield o
-    while n > r:
-        o += r
-        n -= r
-        yield o
-    yield o + n
-
-
 def apply_colours(days, colours):
     """ Apply given colours to list of day names """
     cdays = [sopel.formatting.color(i, j)
@@ -55,14 +45,10 @@ def apply_colours(days, colours):
 
 
 def split_msg(days):
-    """ Split the days based on the max irc message size of 400 """
-    days_comma = ['{}, '.format(i) for i in days]
-    acc = list(itertools.accumulate(len(i) for i in days_comma))
-    nr = list(num_ranges(len(', '.join(days)), 400))
-    ranges = zip(nr, nr[1:])
-    msgs = [[i for i, a in zip(days, acc) if lower < a < upper]
-            for lower, upper in ranges]
-    return [', '.join(i) for i in msgs]
+    msg = ', '.join(i.replace(' ', '\x1f') for i in days)
+    lines = [i.replace('\x1f', ' ') for i in textwrap.wrap(msg, 400)]
+
+    return lines
 
 
 @sopel.module.commands('days')
@@ -73,4 +59,4 @@ def days(bot, trigger):
     cdays = apply_colours(days, colours)
 
     for msg in split_msg(cdays):
-        bot.say('Today is {}'.format(msg))
+        bot.say('{}'.format(msg))

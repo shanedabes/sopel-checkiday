@@ -44,13 +44,19 @@ def test_apply_colours():
     assert cdays == ['\x0301abc\x03', '\x0302def\x03', '\x0301ghi\x03']
 
 
-def test_num_ranges():
-    nr = checkiday.num_ranges(840, 400)
-    assert list(nr) == [0, 400, 800, 840]
+#  def test_num_ranges():
+#      nr = checkiday.num_ranges(840, 400)
+#      assert list(nr) == [0, 400, 800, 840]
 
+
+#  def test_split_messages():
+#      days = ['a'] * 140
+#      output_lines = checkiday.split_msg(days)
+
+#      assert [len(i) for i in output_lines] == [397, 16]
 
 def test_split_messages():
-    days = ['a'] * 140
+    days = ['test 1', 'test 2'] * 26
     output_lines = checkiday.split_msg(days)
 
-    assert [len(i) for i in output_lines] == [397, 16]
+    assert output_lines[-1] == 'test 1, test 2'
